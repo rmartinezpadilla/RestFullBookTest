@@ -1,0 +1,143 @@
+////
+////group 'com.tevolver'
+////version '1.0-SNAPSHOT'
+////
+////apply plugin: 'eclipse'
+////apply plugin: 'idea'
+////apply plugin: 'java'
+//////apply plugin: 'net.serenity-bdd.aggregator'
+////
+////sourceCompatibility = 1.8
+////targetCompatibility = 1.8
+////
+////compileJava.options.encoding = 'UTF-8'
+////compileTestJava.options.encoding = "UTF-8"
+////
+////repositories {
+////    mavenCentral()
+////}
+////
+////buildscript {
+////    repositories {
+////        mavenLocal()
+////        mavenCentral()
+////    }
+////
+////    /*dependencies {
+////
+////        classpath("net.serenity-bdd:serenity-gradle-plugin:2.4.4")
+////    }*/
+////}
+////
+////dependencies {
+////    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+////    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+////    // https://mvnrepository.com/artifact/net.serenity-bdd/serenity-core
+////    implementation group: 'net.serenity-bdd', name: 'serenity-core', version: '2.4.4'
+////// https://mvnrepository.com/artifact/net.serenity-bdd/serenity-junit
+////    implementation group: 'net.serenity-bdd', name: 'serenity-junit', version: '2.4.4'
+////// https://mvnrepository.com/artifact/net.serenity-bdd/serenity-cucumber
+////    implementation group: 'net.serenity-bdd', name: 'serenity-cucumber', version: '3.1.15'
+////// https://mvnrepository.com/artifact/org.slf4j/slf4j-api
+////    implementation group: 'org.slf4j', name: 'slf4j-api', version: '2.0.0-alpha6'
+////// https://mvnrepository.com/artifact/net.serenity-bdd/serenity-rest-assured
+////    implementation group: 'net.serenity-bdd', name: 'serenity-rest-assured', version: '2.4.4'
+////}
+////
+/////*test {
+////    useJUnitPlatform()
+////}*/
+//
+//plugins {
+//    id 'java'
+//}
+//
+//group 'tevolvers.com'
+//version '1.0-SNAPSHOT'
+//
+//repositories {
+//    mavenCentral()
+//}
+//
+//dependencies {
+//    implementation('junit:junit:4.12')
+//    //testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+//    //testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+//    // https://mvnrepository.com/artifact/net.serenity-bdd/serenity-rest-assured
+//    implementation group: 'net.serenity-bdd', name: 'serenity-rest-assured', version: '3.2.0'
+//    // https://mvnrepository.com/artifact/net.serenity-bdd/serenity-screenplay
+//    implementation group: 'net.serenity-bdd', name: 'serenity-screenplay', version: '3.2.0'
+//    // https://mvnrepository.com/artifact/net.serenity-bdd/serenity-core
+//    implementation group: 'net.serenity-bdd', name: 'serenity-core', version: '3.2.0'
+//    // https://mvnrepository.com/artifact/net.serenity-bdd/serenity-cucumber6
+//    implementation group: 'net.serenity-bdd', name: 'serenity-cucumber6', version: '2.6.0'
+//    // https://mvnrepository.com/artifact/net.serenity-bdd/serenity-junit
+//    implementation group: 'net.serenity-bdd', name: 'serenity-junit', version: '3.2.0'
+//
+//// https://mvnrepository.com/artifact/net.serenity-bdd/serenity-junit5
+//    implementation group: 'net.serenity-bdd', name: 'serenity-junit5', version: '3.2.0'
+//    // https://mvnrepository.com/artifact/net.serenity-bdd/serenity-screenplay-rest
+//    implementation group: 'net.serenity-bdd', name: 'serenity-screenplay-rest', version: '3.2.0'
+//
+//
+//
+//
+//
+//
+//
+//}
+
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'java'
+apply plugin: 'net.serenity-bdd.aggregator'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+compileJava.options.encoding = 'UTF-8'
+compileTestJava.options.encoding = "UTF-8"
+
+
+repositories {
+    mavenCentral()
+}
+
+buildscript {
+    repositories {
+        mavenCentral()
+
+
+        jcenter()
+
+        dependencies {
+            classpath("net.serenity-bdd:serenity-gradle-plugin:2.0.82")
+        }
+    }
+}
+
+
+dependencies {
+    implementation('junit:junit:4.12')
+    implementation('net.serenity-bdd:serenity-core:2.0.82')
+    implementation('net.serenity-bdd:serenity-junit:2.0.82')
+    implementation('net.serenity-bdd:serenity-screenplay:2.0.82')
+    implementation('net.serenity-bdd:serenity-screenplay-webdriver:2.0.82')
+    implementation('org.slf4j:slf4j-simple:1.7.25')
+    implementation('net.serenity-bdd:serenity-cucumber:1.9.45')
+    implementation('net.serenity-bdd:serenity-rest-assured:2.0.82')
+    implementation("net.serenity-bdd:serenity-screenplay-rest:2.0.82")
+    implementation('com.google.code.gson:gson:2.8.6')
+    //implementation group: 'com.codoid.products', name: 'fillo', version: '1.18'
+    //implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.7'
+    // https://mvnrepository.com/artifact/com.codoid.products/fillo
+//    compile group: 'com.codoid.products', name: 'fillo', version: '1.21'
+//
+    implementation 'net.serenity-bdd:serenity-screenplay-webdriver:2.0.66'
+    implementation 'org.assertj:assertj-core:3.11.1'
+
+
+}
+test.finalizedBy(aggregate)
+
+//gradle.startParameter.continueOnFailure = true
